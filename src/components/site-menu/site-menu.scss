@@ -1,0 +1,106 @@
+@import '../../assets/scss/variables.scss';
+
+.site-menu-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: block;
+    float: left;
+}
+
+.site-menu {
+    height: 100%;
+    width: 0;
+    padding: 32px 0 48px;
+    padding-left: 0;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0,0,0,.32),  rgba(0,0,0,.16));
+    transition: all ease 0.24s;
+}
+
+.__menuOpen {
+    .site-menu {
+        padding-left: 24px;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .site-menu-toggle {
+        transform: rotateY(180deg);
+    }
+}
+
+.site-menu-title {
+    font-size: 32px;
+    margin-bottom: 32px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-menu-list-item {
+    color: #fff;
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 8px;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    margin-left: 16px;
+    cursor: pointer;
+    transition: .24s all ease;
+
+    &:hover,
+    &:focus {
+        color: $accentColor;
+        margin-left: 24px;
+        &:before {
+            color: #fff;
+            left: -24px;
+        }
+    }
+    &:before {
+        position: absolute;
+        transition: .24s all ease;
+        left: -16px;
+        content: "";
+        width: 2px;
+        background-color: currentColor;
+        display: inline-block;
+        height: 100%;
+    }
+
+    &.__isCurrent {
+        color: #fff;
+        &:before {
+            color: $accentColor;
+        }
+    }
+    &:last-child{
+        margin-top: 24px;
+    }
+}
+
+.site-menu-toggle {
+    position: absolute;
+    width: 0;
+    background-color: rgba(0,0,0,.16);
+    padding: 16px 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    top: 50%;
+    z-index: 2021;
+    right: -32px;
+    font-size:32px;
+    transition: all ease 0.24s;
+
+    &.__isVisible {
+        width: 32px;
+        opacity: 1;
+    }
+}
