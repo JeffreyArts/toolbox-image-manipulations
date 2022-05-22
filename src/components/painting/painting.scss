@@ -1,0 +1,16 @@
+@import "./../../assets/scss/variables.scss";
+
+.painting {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+}

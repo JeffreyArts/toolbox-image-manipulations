@@ -4,7 +4,6 @@
 
     .button {
         background-color: #eee;
-        color: #666;
         line-height: 1em;
         transition: .32s all ease;
 
@@ -12,10 +11,6 @@
             margin-left: 16px;
         }
 
-        &:hover {
-            background-color: #f90;
-            color: #fff;
-        }
 
         &.__isRecording {
             background-color: #fff;
@@ -27,7 +22,7 @@
         }
 
         &.__isLoading {
-            background-color: #f90;
+            background-color: $accentColor;
             color: #fff;
 
             .loading-icon {

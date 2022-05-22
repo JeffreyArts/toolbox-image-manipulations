@@ -1,0 +1,92 @@
+@import "./../../assets/scss/variables.scss";
+
+.painting-route {
+    .loader-container {
+        position: absolute;
+        left: 0;
+        right:0;
+        top:0;
+        bottom: 0;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: $accentColor;
+        border-radius: 8px;
+        background: rgba(255,255,255,.8) linear-gradient(rgba(255,255,255,.72), rgba(255,255,255,.96));
+        z-index: 1;
+        font-family: Fixedsys;
+        font-size: 32px;
+        opacity: 0;
+        pointer-events: none;
+        &.__isLoading {
+            opacity: 1;
+        }
+    }
+
+    .buttons-container {
+        margin-top: 16px;
+    }
+    .image-preview {
+        position: relative;
+    }
+    .delete-row {
+        position: absolute;
+        top: 8px;
+        padding: 4px;
+        right: 32px;
+        font-size: 8px;
+        color: #fff;
+        background-color: #f90e43;
+        display: inline-block;
+        opacity: 0;
+        transition: .32s all ease;
+        cursor: pointer;
+    }
+
+    .group {
+        position: relative;
+        .option-title:hover {
+            .delete-row {
+                opacity: 1;
+                transform: scale(1.4);
+            }
+        }
+
+        &.__isCollapsable {
+            .option {
+                overflow: hidden;
+                height:0;
+                margin: 0;
+            }
+
+            &.__isOpen {
+                .option {
+                    height: auto;
+                    margin-bottom: 8px;
+                }
+                &:after {
+                    transform:rotate(90deg);
+                }
+            }
+
+            &:hover {
+                &:after {
+
+                    font-size: 1.6em;
+                }
+            }
+            &:after {
+                content: "›";
+                line-height: 40px;
+                position: absolute;
+                right: 0;
+                top:0;
+                transition: .24s all ease;
+            }
+        }
+    }
+    .option-title {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}
